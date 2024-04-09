@@ -1,0 +1,156 @@
+/* Byte Maze Hashim */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: backgroundAnimation 5s infinite alternate;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: backgroundAnimation 6s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: radial-gradient(circle, #ff0a0e, #ff8c00, #ffc400);
+    }
+    25% {
+        background: radial-gradient(circle, #ffc400, #4dff00, #00a8f3);
+    }
+    50% {
+        background: radial-gradient(circle, #00a8f3, #4b0082, #ff00ff);
+    }
+    75% {
+        background: radial-gradient(circle, #ff00ff, #ff0080, #ff0000);
+    }
+    100% {
+        background: radial-gradient(circle, #ff0000, #ff0a0e, #ff8c00);
+    }
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Adjust alpha value as needed */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.title {
+    color: #3f0f7e; /* Keep the same color */
+    font-size: 38px;
+    margin-bottom: 20px;
+    animation: pulsate 2s infinite alternate;
+}
+.title2 {
+    color: #0e2f90; /* Keep the same color */
+    font-size: 38px;
+    margin-bottom: 20px;
+    animation: pulsate 2s infinite alternate;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust alpha value as needed */
+    border-radius: 22px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    border: 3px solid #ccc;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgba(126, 121, 121, 0.5); /* Adjust alpha value as needed */
+}
+
+.cell:hover {
+    background-color: #fffafa;
+}
+
+.status {
+    font-size: 30px;
+    font-weight: bold; /* Corrected property for making text bold */
+    color: #0c0c0c;
+    margin-bottom: 20px;
+}
+
+.reset-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #45a049;
+}
+
+.winner {
+    animation: winnerAnimation 0.5s ease-in-out;
+}
+
+@keyframes winnerAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.music-button {
+    padding: 5px 10px; /* smaller padding */
+    background-color: #f321db; /* different color */
+    color: #fff;
+    font-size: 16px; /* smaller font size */
+    border: none;
+    border-radius: 5px; /* smaller border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* space from the "New Game" button */
+}
+
+.music-button:hover {
+    background-color: #0b7dda; /* darker color on hover */
+}
